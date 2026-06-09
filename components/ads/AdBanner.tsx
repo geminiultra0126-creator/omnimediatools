@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ADSENSE_PUB_ID, AD_SLOTS } from "@/lib/constants";
+import { ADSENSE_PUB_ID, AD_SLOTS } from "../../lib/constants";
 
 interface AdBannerProps {
   slot?: string;

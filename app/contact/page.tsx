@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG } from "../../lib/constants";
 
 export default function ContactPage() {
   const [name, setName] = useState("");

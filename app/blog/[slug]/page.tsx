@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { blogPosts, getBlogPostBySlug } from "@/lib/blog-data";
-import AdBanner from "@/components/ads/AdBanner";
-import AdInArticle from "@/components/ads/AdInArticle";
-import { AD_SLOTS, SITE_CONFIG } from "@/lib/constants";
+import { blogPosts, getBlogPostBySlug } from "../../../lib/blog-data";
+import AdBanner from "../../../components/ads/AdBanner";
+import AdInArticle from "../../../components/ads/AdInArticle";
+import { AD_SLOTS, SITE_CONFIG } from "../../../lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;

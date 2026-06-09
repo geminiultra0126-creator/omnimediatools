@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ADSENSE_PUB_ID, AD_SLOTS } from "@/lib/constants";
+import { ADSENSE_PUB_ID, AD_SLOTS } from "../../lib/constants";
 
 export default function AdInArticle({ className = "" }: { className?: string }) {
   const adRef = useRef<HTMLDivElement>(null);

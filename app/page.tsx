@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { platforms } from "@/lib/platforms";
-import DownloadForm from "@/components/DownloadForm";
-import AdBanner from "@/components/ads/AdBanner";
-import { AD_SLOTS } from "@/lib/constants";
+import { platforms } from "../lib/platforms";
+import DownloadForm from "../components/DownloadForm";
+import AdBanner from "../components/ads/AdBanner";
+import { AD_SLOTS } from "../lib/constants";
 
 export default function HomePage() {
   return (

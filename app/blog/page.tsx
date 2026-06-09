@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { blogPosts } from "@/lib/blog-data";
-import AdBanner from "@/components/ads/AdBanner";
-import { AD_SLOTS, SITE_CONFIG } from "@/lib/constants";
+import { blogPosts } from "../../lib/blog-data";
+import AdBanner from "../../components/ads/AdBanner";
+import { AD_SLOTS, SITE_CONFIG } from "../../lib/constants";
 
 export const metadata: Metadata = {
   title: "Blog — Video Download Guides & Tips",

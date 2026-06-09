@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import CookieConsent from "@/components/layout/CookieConsent";
-import { SITE_CONFIG, ADSENSE_PUB_ID, GA_MEASUREMENT_ID } from "@/lib/constants";
+import { ThemeProvider } from "../components/ThemeProvider";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import CookieConsent from "../components/layout/CookieConsent";
+import { SITE_CONFIG, ADSENSE_PUB_ID, GA_MEASUREMENT_ID } from "../lib/constants";
 import "./globals.css";
 
 const inter = Inter({

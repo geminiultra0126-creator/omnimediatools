@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { platforms } from "@/lib/platforms";
+import { platforms } from "../../lib/platforms";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
-import { platforms } from "@/lib/platforms";
-import { blogPosts } from "@/lib/blog-data";
-import { SITE_CONFIG } from "@/lib/constants";
+import { platforms } from "../lib/platforms";
+import { blogPosts } from "../lib/blog-data";
+import { SITE_CONFIG } from "../lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_CONFIG.url;

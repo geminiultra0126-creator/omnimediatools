@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "../../components/ThemeProvider";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
