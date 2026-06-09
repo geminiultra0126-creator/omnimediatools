@@ -7,12 +7,9 @@ import { NextResponse } from "next/server";
 // =====================================================
 
 const COBALT_INSTANCES = [
-  "https://cobalt.alpha.wolfy.love",    // 100% score, canine.tools
-  "https://lime.clxxped.lol",           // 100% score, clxxped
-  "https://grapefruit.clxxped.lol",     // 100% score, clxxped
-  "https://subito-c.meowing.de",        // 100% score, meowing.de
-  "https://nuko-c.meowing.de",          // 100% score, meowing.de
-  "https://apicobalt.mgytr.top",        // 100% score, mgytr
+  "https://cobaltapi.cjs.nz",                // ✅ Tested working - imputnet/cobalt
+  "https://cobaltapi.kittycat.boo",           // ✅ Tested working - zImPatrick/cobalt
+  "https://api.cobalt.blackcat.sweeux.org",   // ✅ Tested working - zImPatrick/cobalt
 ];
 
 export async function POST(request: Request) {
