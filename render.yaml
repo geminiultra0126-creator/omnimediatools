@@ -1,15 +1,15 @@
 services:
   - type: web
-    name: omniload
+    name: omniload-v2
     runtime: node
     plan: free
     region: oregon
     buildCommand: npm install && npm run build
-    startCommand: npx next start -p $PORT
+    startCommand: npm run start -- -p $PORT
     envVars:
       - key: PORT
-        value: 10000
+        value: "10000"
       - key: NODE_ENV
         value: production
       - key: NODE_VERSION
-        value: 22.12.0
+        value: "22.12.0"
