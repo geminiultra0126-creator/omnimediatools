@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   tagline: "Free Online Video & Audio Downloader",
   description:
     "Download videos and audio from YouTube, Instagram, TikTok, Twitter/X, Facebook, Pinterest, Reddit, Spotify, and 20+ platforms for free. No signup, no limits, up to 8K quality.",
-  url: "https://omniload.onrender.com",
+  url: "https://omnimediatools.com",
   email: "support@omniload.com",
   author: "OmniLoad",
 };

@@ -44,7 +44,7 @@ Navigate to YouTube and find the video you want to download. You can copy the UR
 
 ### Step 2: Paste the URL on OmniLoad
 
-Go to [OmniLoad](https://omniload.onrender.com) and paste the copied URL into the download input box. You can paste by pressing Ctrl+V (or Cmd+V on Mac), or by right-clicking and selecting "Paste."
+Go to [OmniLoad](https://omnimediatools.com) and paste the copied URL into the download input box. You can paste by pressing Ctrl+V (or Cmd+V on Mac), or by right-clicking and selecting "Paste."
 
 ### Step 3: Choose Your Format and Quality
 
@@ -135,7 +135,7 @@ Instagram Reels are short-form videos that have become incredibly popular. Here'
 1. **Open Instagram** and navigate to the Reel you want to download
 2. **Tap the three dots** (⋯) menu on the Reel
 3. **Select "Copy Link"** from the menu
-4. **Go to OmniLoad** (https://omniload.onrender.com)
+4. **Go to OmniLoad** (https://omnimediatools.com)
 5. **Paste the link** in the download box
 6. **Click Download** to save the Reel to your device
 
@@ -253,7 +253,7 @@ The fastest and most reliable way to download TikTok videos without watermark is
 2. **Find the video** you want to download
 3. **Tap the Share button** (arrow icon)
 4. **Tap "Copy Link"**
-5. **Go to OmniLoad** (https://omniload.onrender.com)
+5. **Go to OmniLoad** (https://omnimediatools.com)
 6. **Paste the link** in the input box
 7. **Click Download**
 
@@ -515,7 +515,7 @@ The fastest way to convert YouTube to MP3 is using OmniLoad's built-in converter
 ### Step-by-Step Guide
 
 1. **Copy the YouTube URL**: Go to YouTube, find the video with the audio you want, and copy the URL
-2. **Visit OmniLoad**: Go to https://omniload.onrender.com
+2. **Visit OmniLoad**: Go to https://omnimediatools.com
 3. **Paste the URL**: Paste the YouTube link in the input box
 4. **Select MP3 format**: From the download options, choose MP3 and your preferred bitrate
 5. **Download**: Click the Download button
