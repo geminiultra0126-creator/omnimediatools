@@ -80,8 +80,8 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {[
               { value: "20+", label: "Platforms Supported" },
-              { value: "∞", label: "Unlimited Usage" },
-              { value: "8K", label: "Max Quality" },
+              { value: "⚡", label: "Fast Browser-Based Tools" },
+              { value: "HD+", label: "High-Quality Output" },
               { value: "100%", label: "Free Forever" },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
@@ -164,7 +164,7 @@ export default function HomePage() {
               {
                 num: "02",
                 title: "Choose Format & Quality",
-                desc: "Select your preferred format and quality — from 360p to 8K for video, or MP3/WAV for audio extraction.",
+                desc: "Select your preferred format and quality — from standard to high definition for video, or MP3/WAV for audio extraction.",
                 icon: "M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75",
               },
               {
@@ -331,7 +331,7 @@ function FAQItems() {
     },
     {
       q: "What quality options are available?",
-      a: "We support a wide range of qualities from 360p all the way up to 8K Ultra HD for video. For audio, we support MP3 (128kbps-320kbps), OGG, WAV, and OPUS formats.",
+      a: "We support a wide range of qualities including standard and high-definition video. For audio, we support MP3, OGG, WAV, and OPUS formats.",
     },
     {
       q: "Do I need to install any software?",

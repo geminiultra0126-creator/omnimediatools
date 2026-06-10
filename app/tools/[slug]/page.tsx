@@ -170,12 +170,12 @@ export default async function ToolPage({ params }: PageProps) {
                     </td>
                     <td className="px-6 py-3 text-[hsl(var(--muted-foreground))]">
                       {["MP3", "M4A", "OGG", "OPUS"].includes(fmt)
-                        ? "Up to 320kbps"
+                        ? "High Quality"
                         : ["WAV", "FLAC"].includes(fmt)
                         ? "Lossless"
                         : ["JPG", "PNG", "GIF", "WEBP"].includes(fmt)
                         ? "Original"
-                        : "Up to 8K"}
+                        : "Best Available"}
                     </td>
                   </tr>
                 ))}

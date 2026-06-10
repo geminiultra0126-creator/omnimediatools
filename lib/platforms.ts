@@ -37,7 +37,7 @@ export const platforms: Platform[] = [
     faqs: [
       { question: "What content can I process with this tool?", answer: "You can use this tool to manage your own uploaded content, public-domain videos, Creative Commons content, or any content you have explicit permission to use." },
       { question: "What quality options are available?", answer: "Omni Media Tools supports all available qualities from 360p up to 8K Ultra HD, depending on the original video quality." },
-      { question: "Can I extract audio from video content?", answer: "Yes, you can convert your own video files or permitted media into audio format (MP3 up to 320kbps, M4A, OGG, or other formats)." },
+      { question: "Can I extract audio from video content?", answer: "Yes, you can extract audio from your own video files or content you have permission to use. Audio is available in MP3, M4A, OGG, and other formats." },
       { question: "Is this tool free to use?", answer: "Yes, Omni Media Tools is 100% free with no hidden costs, no premium tiers, and no usage limits." },
       { question: "Do I need to install any software?", answer: "No, Omni Media Tools works entirely in your web browser. Just paste a link and go — no software, extensions, or apps needed." },
     ],
@@ -473,7 +473,7 @@ export const platforms: Platform[] = [
     ],
     faqs: [
       { question: "What content can I process?", answer: "You can use this tool for podcast episodes and audio content you have permission to use. Always respect copyright." },
-      { question: "What audio quality is available?", answer: "Omni Media Tools offers audio in various qualities up to 320kbps." },
+      { question: "What audio quality is available?", answer: "Omni Media Tools offers audio in various high-quality formats including MP3, M4A, and OGG." },
       { question: "Can I save podcast episodes?", answer: "Yes, podcast episodes from public feeds can be saved as audio files for offline listening." },
     ],
   },

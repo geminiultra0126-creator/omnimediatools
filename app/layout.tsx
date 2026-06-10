@@ -143,7 +143,7 @@ export default function RootLayout({
               },
               featureList: [
                 "Browser-based media tools for 20+ platforms",
-                "Video quality up to 8K",
+                "High-quality video and audio output",
                 "Audio extraction and conversion",
                 "No registration required",
                 "Free to use",

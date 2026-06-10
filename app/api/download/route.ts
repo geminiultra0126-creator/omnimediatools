@@ -157,7 +157,7 @@ async function tryCobalt(
               audioData.status === "redirect"
             ) {
               formats.push({
-                quality: "Audio Only (MP3 320kbps)",
+                quality: "Audio Only (MP3)",
                 format: "MP3",
                 size: "Ready",
                 url: audioData.url,

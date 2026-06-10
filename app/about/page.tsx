@@ -37,7 +37,7 @@ export default function AboutPage() {
           <ul>
             <li><strong>20+ Platform Support:</strong> Manage media from YouTube, Instagram, TikTok, Twitter/X, Facebook, Pinterest, Reddit, Vimeo, LinkedIn, and many more.</li>
             <li><strong>Multiple Formats:</strong> Save content as MP4, MP3, WEBM, M4A, and other popular formats.</li>
-            <li><strong>Quality up to 8K:</strong> Process media in the highest available quality, from 360p to 8K Ultra HD.</li>
+            <li><strong>High-Quality Output:</strong> Process media in the best available quality, from standard definition to high definition.</li>
             <li><strong>100% Free:</strong> No hidden costs, no premium tiers, no subscription fees. Omni Media Tools is completely free to use.</li>
             <li><strong>No Registration:</strong> Start using our tools immediately. No sign-up or account creation needed.</li>
             <li><strong>Privacy Focused:</strong> We don&apos;t store your files or personal information. All processing happens in real-time.</li>
