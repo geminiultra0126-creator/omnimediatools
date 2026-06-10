@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { platforms } from "../../lib/platforms";
+import { getVisiblePlatforms } from "../../lib/platforms";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,7 +27,7 @@ export default function Footer() {
               Media Tools
             </h3>
             <ul className="space-y-2.5">
-              {platforms.slice(0, 8).map((p) => (
+              {getVisiblePlatforms().slice(0, 8).map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/tools/${p.slug}`}

@@ -1,11 +1,9 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { platforms, getPlatformBySlug } from "../../../lib/platforms";
+import { platforms, getPlatformBySlug, getVisiblePlatforms } from "../../../lib/platforms";
 import DownloadForm from "../../../components/DownloadForm";
-import AdBanner from "../../../components/ads/AdBanner";
-import AdInArticle from "../../../components/ads/AdInArticle";
-import { AD_SLOTS, SITE_CONFIG } from "../../../lib/constants";
+import { SITE_CONFIG } from "../../../lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -37,7 +35,34 @@ export default async function ToolPage({ params }: PageProps) {
   const platform = getPlatformBySlug(slug);
   if (!platform) notFound();
 
-  const relatedPlatforms = platforms
+  // If platform is hidden, show "Coming Soon" page
+  if (platform.hidden) {
+    return (
+      <div className="flex flex-col items-center justify-center py-24 sm:py-36">
+        <div className="container mx-auto max-w-xl px-4 text-center sm:px-6">
+          <div className="mb-6 flex h-16 w-16 mx-auto items-center justify-center rounded-2xl bg-[hsl(var(--primary)/.1)] text-[hsl(var(--primary))]">
+            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Coming Soon
+          </h1>
+          <p className="mb-8 text-base text-[hsl(var(--muted-foreground))] leading-relaxed">
+            This tool is currently under review and will be updated with responsible, copyright-safe functionality.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl bg-[hsl(var(--primary))] px-6 py-3 text-sm font-semibold text-white transition-all hover:opacity-90"
+          >
+            ← Explore Other Tools
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const relatedPlatforms = getVisiblePlatforms()
     .filter((p) => p.slug !== slug)
     .slice(0, 8);
 
@@ -51,31 +76,26 @@ export default async function ToolPage({ params }: PageProps) {
             style={{ backgroundColor: `${platform.color}08` }}
           />
         </div>
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="mb-8 text-center">
-            <div
-              className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl"
-              style={{
-                backgroundColor: `${platform.color}15`,
-                color: platform.color,
-              }}
-              dangerouslySetInnerHTML={{ __html: platform.iconSvg }}
-            />
-            <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-              <span style={{ color: platform.color }}>{platform.name}</span>{" "}
-              Media Tools
-            </h1>
-            <p className="mx-auto max-w-2xl text-base text-[hsl(var(--muted-foreground))] md:text-lg">
-              {platform.description}
-            </p>
-          </div>
+        <div className="container mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <div
+            className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl"
+            style={{ backgroundColor: `${platform.color}15`, color: platform.color }}
+            dangerouslySetInnerHTML={{ __html: platform.iconSvg }}
+          />
+          <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+            <span style={{ color: platform.color }}>{platform.name}</span>{" "}
+            Media Tools
+          </h1>
+          <p className="mx-auto max-w-2xl text-base text-[hsl(var(--muted-foreground))] md:text-lg">
+            {platform.description}
+          </p>
 
           <DownloadForm platformName={platform.name} />
 
           {/* Responsible Use Disclaimer */}
           <div className="mx-auto mt-5 max-w-2xl rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card)/.5)] px-5 py-3">
             <p className="text-center text-xs leading-relaxed text-[hsl(var(--muted))]">
-              This tool is for managing your own content, public-domain media, or content you have permission to use. We do not support copyright infringement.
+              Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.
             </p>
           </div>
 
@@ -93,12 +113,7 @@ export default async function ToolPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Top Ad */}
-      <div className="container mx-auto px-4 sm:px-6">
-        <AdBanner slot={AD_SLOTS.banner_top} />
-      </div>
-
-      {/* How to Download */}
+      {/* How To Section */}
       <section className="py-16">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6">
           <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">
@@ -111,11 +126,11 @@ export default async function ToolPage({ params }: PageProps) {
                 key={i}
                 className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6"
               >
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl gradient-bg text-white text-sm font-bold">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--primary)/.1)] text-sm font-bold text-[hsl(var(--primary))]">
                   {i + 1}
                 </div>
-                <h3 className="mb-2 text-base font-bold">{step.step}</h3>
-                <p className="text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
+                <h3 className="mb-1 text-sm font-bold">{step.step}</h3>
+                <p className="text-xs leading-relaxed text-[hsl(var(--muted-foreground))]">
                   {step.description}
                 </p>
               </div>
@@ -123,11 +138,6 @@ export default async function ToolPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-
-      {/* In-Article Ad */}
-      <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-        <AdInArticle />
-      </div>
 
       {/* Supported Formats */}
       <section className="py-16">
@@ -145,24 +155,26 @@ export default async function ToolPage({ params }: PageProps) {
                 </tr>
               </thead>
               <tbody>
-                {platform.formats.map((f) => (
+                {platform.formats.map((fmt) => (
                   <tr
-                    key={f}
+                    key={fmt}
                     className="border-b border-[hsl(var(--border))] last:border-0"
                   >
-                    <td className="px-6 py-3 font-medium">{f}</td>
+                    <td className="px-6 py-3 font-medium">{fmt}</td>
                     <td className="px-6 py-3 text-[hsl(var(--muted-foreground))]">
-                      {["MP3", "M4A", "OGG", "WAV", "OPUS", "FLAC"].includes(f)
+                      {["MP3", "M4A", "OGG", "OPUS", "WAV", "FLAC"].includes(fmt)
                         ? "Audio"
-                        : ["JPG", "PNG", "GIF"].includes(f)
+                        : ["JPG", "PNG", "GIF", "WEBP"].includes(fmt)
                         ? "Image"
                         : "Video"}
                     </td>
                     <td className="px-6 py-3 text-[hsl(var(--muted-foreground))]">
-                      {["MP3", "M4A", "OGG", "WAV", "OPUS", "FLAC"].includes(f)
+                      {["MP3", "M4A", "OGG", "OPUS"].includes(fmt)
                         ? "Up to 320kbps"
-                        : ["JPG", "PNG"].includes(f)
-                        ? "Original resolution"
+                        : ["WAV", "FLAC"].includes(fmt)
+                        ? "Lossless"
+                        : ["JPG", "PNG", "GIF", "WEBP"].includes(fmt)
+                        ? "Original"
                         : "Up to 8K"}
                     </td>
                   </tr>
@@ -173,20 +185,53 @@ export default async function ToolPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Long Content (700-1000 words) */}
+      {platform.longContent && (
+        <section className="py-16 border-t border-[hsl(var(--border))]">
+          <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+            <div
+              className="prose max-w-none"
+              dangerouslySetInnerHTML={{ __html: platform.longContent }}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Internal Links */}
+      <section className="py-12">
+        <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+          <div className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6">
+            <h3 className="mb-3 text-sm font-bold">Related Resources</h3>
+            <div className="flex flex-wrap gap-2">
+              <Link href="/blog/how-to-download-your-own-videos-safely" className="text-xs text-[hsl(var(--primary))] hover:underline">How to Download Your Own Videos Safely</Link>
+              <span className="text-[hsl(var(--border))]">•</span>
+              <Link href="/blog/what-is-copyright-safe-media-downloading" className="text-xs text-[hsl(var(--primary))] hover:underline">What Is Copyright-Safe Downloading?</Link>
+              <span className="text-[hsl(var(--border))]">•</span>
+              <Link href="/blog/best-free-online-media-tools-for-creators" className="text-xs text-[hsl(var(--primary))] hover:underline">Best Free Media Tools for Creators</Link>
+              <span className="text-[hsl(var(--border))]">•</span>
+              <Link href="/copyright" className="text-xs text-[hsl(var(--primary))] hover:underline">Copyright Policy</Link>
+              <span className="text-[hsl(var(--border))]">•</span>
+              <Link href="/terms" className="text-xs text-[hsl(var(--primary))] hover:underline">Terms of Service</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6">
           <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">
-            Frequently Asked Questions
+            Frequently Asked{" "}
+            <span className="gradient-text">Questions</span>
           </h2>
           <div className="space-y-3">
             {platform.faqs.map(({ question, answer }) => (
               <details
                 key={question}
-                className="group overflow-hidden rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))]"
+                className="group overflow-hidden rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] transition-colors hover:bg-[hsl(var(--card-hover))]"
               >
                 <summary className="flex w-full cursor-pointer items-center justify-between px-6 py-5 text-left list-none">
-                  <span className="pr-4 text-sm font-semibold sm:text-base">
+                  <span className="pr-4 text-sm font-semibold text-[hsl(var(--foreground))] sm:text-base">
                     {question}
                   </span>
                   <svg
@@ -198,7 +243,7 @@ export default async function ToolPage({ params }: PageProps) {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="shrink-0 text-[hsl(var(--muted-foreground))] transition-transform group-open:rotate-180"
+                    className="shrink-0 text-[hsl(var(--muted-foreground))] transition-transform duration-200 group-open:rotate-180"
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
@@ -213,11 +258,6 @@ export default async function ToolPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-
-      {/* Bottom Ad */}
-      <div className="container mx-auto px-4 sm:px-6">
-        <AdBanner slot={AD_SLOTS.banner_bottom} />
-      </div>
 
       {/* Related Tools */}
       <section className="py-16">

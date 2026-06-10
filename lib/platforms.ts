@@ -7,11 +7,13 @@ export interface Platform {
   features: string[];
   formats: string[];
   popular?: boolean;
+  hidden?: boolean;
   iconSvg: string;
   metaTitle: string;
   metaDescription: string;
   howTo: { step: string; description: string }[];
   faqs: { question: string; answer: string }[];
+  longContent?: string;
 }
 
 export const platforms: Platform[] = [
@@ -39,6 +41,41 @@ export const platforms: Platform[] = [
       { question: "Is this tool free to use?", answer: "Yes, Omni Media Tools is 100% free with no hidden costs, no premium tiers, and no usage limits." },
       { question: "Do I need to install any software?", answer: "No, Omni Media Tools works entirely in your web browser. Just paste a link and go — no software, extensions, or apps needed." },
     ],
+    longContent: `<h2>What Is the YouTube Media Tool?</h2>
+<p>The YouTube Media Tool from Omni Media Tools is a free, browser-based utility designed to help content creators, educators, students, and everyday users manage their own YouTube content efficiently. Whether you need to back up your own uploaded videos, extract audio from your own lectures or podcasts, or convert your content into different formats for cross-platform publishing, this tool makes the process simple and fast.</p>
+<p>Unlike desktop software that requires installation and updates, our YouTube tool works entirely in your web browser. There is nothing to download, no accounts to create, and no fees to pay. Simply paste the URL of your own YouTube content, choose your preferred format and quality, and save the file directly to your device.</p>
+
+<h2>Who Can Use This Tool?</h2>
+<p>This tool is designed for anyone who needs to manage their own YouTube content responsibly:</p>
+<ul>
+<li><strong>Content Creators:</strong> Back up your own uploads, repurpose videos for other platforms like Instagram or TikTok, or extract audio for podcast episodes.</li>
+<li><strong>Educators & Students:</strong> Save your own educational lectures, presentations, or tutorials for offline access. Students can save their own project submissions or school-related content.</li>
+<li><strong>Marketers:</strong> Convert your own promotional videos into different formats optimized for various social media platforms and email campaigns.</li>
+<li><strong>Personal Users:</strong> Keep backup copies of your own family videos, travel vlogs, or personal content that you have uploaded to YouTube.</li>
+</ul>
+
+<h2>Copyright-Safe Use Cases</h2>
+<p>Omni Media Tools is committed to responsible media management. Here are examples of legitimate, copyright-safe uses of this tool:</p>
+<ul>
+<li>Backing up your own YouTube channel videos to a local drive</li>
+<li>Converting your own video content to MP3 for podcast distribution</li>
+<li>Saving Creative Commons or public-domain educational content</li>
+<li>Downloading your own tutorials for offline editing and re-uploading</li>
+<li>Extracting audio from your own recorded interviews or lectures</li>
+</ul>
+<p>Always ensure you have the right to use any content you process through this tool. Never use it to download copyrighted music, movies, or other people's creative work without their explicit permission.</p>
+
+<h2>Step-by-Step Guide</h2>
+<ol>
+<li><strong>Find Your Content:</strong> Navigate to YouTube and locate the video you own or have permission to use. Make sure the content is publicly accessible.</li>
+<li><strong>Copy the URL:</strong> Click on the address bar in your browser and copy the full URL. You can also use the Share button on YouTube and copy the link from there.</li>
+<li><strong>Paste into Omni Media Tools:</strong> Return to this page and paste the copied URL into the input box above. The tool will automatically detect the content.</li>
+<li><strong>Select Format & Quality:</strong> Choose your preferred output format (MP4 for video, MP3 for audio) and select the quality level from 360p up to 8K Ultra HD.</li>
+<li><strong>Save to Your Device:</strong> Click the download button and the file will be saved directly to your device. No registration or additional steps required.</li>
+</ol>
+
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading. Users are solely responsible for ensuring they have the legal right to process any content through our tools.</p>`,
   },
   {
     slug: "instagram-downloader",
@@ -63,6 +100,28 @@ export const platforms: Platform[] = [
       { question: "Do I need to log in to my Instagram account?", answer: "No, you don't need to log in. Omni Media Tools works with any public Instagram content URL." },
       { question: "What quality are the saved files?", answer: "Omni Media Tools saves Instagram content in the highest available quality, matching the original upload quality." },
     ],
+    longContent: `<h2>What Is the Instagram Media Tool?</h2>
+<p>The Instagram Media Tool is a free, browser-based utility that helps you manage your own Instagram content. Content creators who post across multiple platforms often need to save their own Reels, Posts, and Stories for repurposing, portfolio building, or simple backup. This tool makes that process effortless — just paste the URL and save.</p>
+<p>Instagram Stories disappear after 24 hours, making backup particularly important if you want to preserve your creative work. Our tool lets you save your own Stories before they expire, ensuring you never lose content you have worked hard to create.</p>
+
+<h2>Who Can Use This Tool?</h2>
+<ul>
+<li><strong>Influencers & Creators:</strong> Save your own Reels and Posts for repurposing on YouTube Shorts, TikTok, or your personal website portfolio.</li>
+<li><strong>Small Business Owners:</strong> Back up your own product photos, promotional Reels, and brand content for use in other marketing channels.</li>
+<li><strong>Students:</strong> Save your own educational or project-related Instagram content for presentations and portfolios.</li>
+<li><strong>Personal Users:</strong> Keep copies of your own photos, stories, and memories posted on Instagram.</li>
+</ul>
+
+<h2>Copyright-Safe Use Cases</h2>
+<ul>
+<li>Backing up your own Instagram Reels before deleting them from your profile</li>
+<li>Saving your own Stories before they expire after 24 hours</li>
+<li>Repurposing your own Posts for use on other platforms or your website</li>
+<li>Archiving your own brand content for internal records</li>
+</ul>
+
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "tiktok-downloader",
@@ -86,6 +145,28 @@ export const platforms: Platform[] = [
       { question: "Can I extract audio from TikTok videos?", answer: "Yes, you can extract the audio from your own TikTok video and save it as an MP3 file." },
       { question: "Does this work with private accounts?", answer: "No, Omni Media Tools can only process content from public TikTok accounts. Private account content cannot be accessed." },
     ],
+    longContent: `<h2>What Is the TikTok Media Tool?</h2>
+<p>The TikTok Media Tool helps content creators save and manage their own TikTok videos. TikTok's native save feature adds watermarks and reduces quality, which can be problematic when you want to repurpose your own content on other platforms like YouTube Shorts, Instagram Reels, or your personal website.</p>
+<p>Our browser-based tool gives you a clean, high-quality copy of your own TikTok content that you can use for cross-platform publishing, portfolio building, or archival purposes. No app installation needed — it works entirely in your web browser.</p>
+
+<h2>Who Can Use This Tool?</h2>
+<ul>
+<li><strong>TikTok Creators:</strong> Save your own viral videos for repurposing on YouTube Shorts, Instagram, or Facebook Reels.</li>
+<li><strong>Digital Marketers:</strong> Back up your own brand's TikTok campaigns for analytics, reporting, and internal presentations.</li>
+<li><strong>Educators:</strong> Save your own educational TikTok content for use in classroom settings or online courses.</li>
+<li><strong>Personal Users:</strong> Keep backup copies of your own personal TikTok memories and creative projects.</li>
+</ul>
+
+<h2>Copyright-Safe Use Cases</h2>
+<ul>
+<li>Saving your own TikTok videos in HD quality for cross-platform publishing</li>
+<li>Backing up your own content before account changes or deletions</li>
+<li>Extracting audio from your own TikTok videos for podcast use</li>
+<li>Archiving your own brand's TikTok marketing content</li>
+</ul>
+
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "twitter-downloader",
@@ -109,6 +190,28 @@ export const platforms: Platform[] = [
       { question: "Can I save GIFs from tweets?", answer: "Yes, Twitter GIFs are actually short MP4 videos, and Omni Media Tools can save them in their original quality." },
       { question: "Do I need a Twitter account?", answer: "No, you can process media from any public tweet without having a Twitter/X account." },
     ],
+    longContent: `<h2>What Is the Twitter / X Media Tool?</h2>
+<p>The Twitter / X Media Tool allows you to save your own posted videos and GIFs from tweets for backup, repurposing, or content management. Twitter does not provide a native download option for videos, which can be frustrating when you need your own content in a portable format.</p>
+<p>This free, browser-based tool solves that problem. Simply paste the URL of your own tweet containing a video, and save it directly to your device in full quality. Works on any browser, any device, with no registration required.</p>
+
+<h2>Who Can Use This Tool?</h2>
+<ul>
+<li><strong>Journalists & Writers:</strong> Save your own video tweets for portfolio building and cross-platform publishing.</li>
+<li><strong>Brand Managers:</strong> Back up your own brand's video tweets for social media reports and campaign archives.</li>
+<li><strong>Content Creators:</strong> Repurpose your own Twitter/X video content for Instagram, TikTok, or YouTube.</li>
+<li><strong>Personal Users:</strong> Save your own GIFs and video memories from your Twitter/X posts.</li>
+</ul>
+
+<h2>Copyright-Safe Use Cases</h2>
+<ul>
+<li>Saving your own video tweets for backup before deleting them</li>
+<li>Backing up your own GIF posts for portfolio or archives</li>
+<li>Repurposing your own video content for use on other social platforms</li>
+<li>Saving your own brand's campaign videos for internal reporting</li>
+</ul>
+
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "facebook-downloader",
@@ -132,6 +235,28 @@ export const platforms: Platform[] = [
       { question: "Can I save private Facebook videos?", answer: "No, Omni Media Tools can only process publicly available Facebook videos." },
       { question: "What quality options are available?", answer: "Facebook videos are typically available in HD (720p) and SD (360p). Omni Media Tools lets you choose your preferred quality." },
     ],
+    longContent: `<h2>What Is the Facebook Media Tool?</h2>
+<p>The Facebook Media Tool helps you save and manage your own Facebook videos, Reels, and Watch content. As a creator or business page owner, you may want to back up your own video content, repurpose it for other platforms, or simply keep a local copy for your records.</p>
+<p>Facebook does not always make it easy to download your own videos in their original quality. Our browser-based tool provides a simple solution — paste the URL of your own Facebook video and save it to your device in HD or SD quality.</p>
+
+<h2>Who Can Use This Tool?</h2>
+<ul>
+<li><strong>Business Page Owners:</strong> Back up your own product videos, live streams, and promotional content for use across marketing channels.</li>
+<li><strong>Content Creators:</strong> Save your own Facebook Reels for repurposing on Instagram, TikTok, or YouTube.</li>
+<li><strong>Community Managers:</strong> Archive your own group's video content for internal documentation and training.</li>
+<li><strong>Personal Users:</strong> Save your own family videos, event recordings, and personal memories from Facebook.</li>
+</ul>
+
+<h2>Copyright-Safe Use Cases</h2>
+<ul>
+<li>Downloading your own Facebook Live recordings for archival</li>
+<li>Saving your own Facebook Reels for cross-platform publishing</li>
+<li>Backing up your own business page's video content</li>
+<li>Preserving your own personal video memories from Facebook</li>
+</ul>
+
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "pinterest-downloader",
@@ -295,6 +420,7 @@ export const platforms: Platform[] = [
     features: ["Podcasts", "Audio Conversion", "High Quality Audio"],
     formats: ["MP3", "M4A", "OGG"],
     popular: false,
+    hidden: true,
     iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>`,
     metaTitle: "Spotify Audio Tools — Manage Your Audio Content | Omni Media Tools",
     metaDescription: "Free Spotify audio tools for managing podcast episodes and permitted audio content. Convert and save in multiple formats.",
@@ -318,6 +444,7 @@ export const platforms: Platform[] = [
     features: ["Your Tracks", "Audio Conversion", "High Quality Audio"],
     formats: ["MP3", "WAV"],
     popular: false,
+    hidden: true,
     iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c-.009-.057-.049-.1-.084-.1zm-.899.828c-.06 0-.091.037-.104.094L0 14.479l.172 1.282c.013.06.045.094.09.094.042 0 .074-.038.087-.094l.196-1.282-.196-1.332c-.013-.057-.045-.094-.073-.094zm1.81-1.108c-.074 0-.12.046-.127.1l-.214 2.434.214 2.318c.007.06.053.098.127.098.073 0 .12-.038.126-.098l.241-2.319-.24-2.434c-.008-.06-.054-.1-.127-.1zm.891-.166c-.074 0-.12.046-.127.1l-.214 2.6.214 2.4c.007.06.053.098.127.098.073 0 .12-.038.127-.098l.24-2.4-.24-2.6c-.007-.06-.054-.1-.127-.1zm.93-.262c-.087 0-.134.046-.14.107l-.2 2.762.2 2.443c.007.067.054.107.14.107.087 0 .134-.04.14-.107l.226-2.443-.226-2.762c-.006-.06-.053-.107-.14-.107zm.94-.116c-.1 0-.147.053-.153.113l-.186 2.878.186 2.47c.006.067.053.113.153.113.1 0 .147-.046.153-.113l.21-2.47-.21-2.878c-.006-.06-.053-.113-.153-.113zm1.014-.18c-.1 0-.16.053-.166.12l-.172 3.058.172 2.496c.006.073.066.12.166.12.093 0 .16-.047.166-.12l.193-2.496-.193-3.058c-.006-.067-.073-.12-.166-.12zm.94.01c-.107 0-.167.053-.173.12l-.159 3.048.159 2.496c.006.073.066.12.173.12.106 0 .166-.047.173-.12l.18-2.496-.18-3.049c-.007-.066-.067-.119-.173-.119zm.953-.18c-.12 0-.18.06-.186.127l-.146 3.228.146 2.503c.007.073.067.127.186.127.12 0 .18-.054.187-.127l.165-2.503-.165-3.228c-.007-.067-.067-.127-.187-.127zm.94-.034c-.12 0-.187.06-.193.127l-.133 3.262.133 2.503c.006.08.073.127.193.127s.187-.047.193-.127l.15-2.503-.15-3.262c-.006-.067-.073-.127-.193-.127zm1.01-.07c-.127 0-.193.066-.2.133l-.12 3.332.12 2.496c.007.08.073.133.2.133.127 0 .193-.053.2-.133l.133-2.496-.134-3.333c-.006-.066-.072-.132-.199-.132zm.947.053c-.133 0-.2.06-.206.127l-.107 3.28.107 2.49c.006.08.073.133.206.133.134 0 .2-.053.207-.134l.12-2.49-.12-3.28c-.007-.066-.073-.126-.207-.126zm2.754-1.492c-.18 0-.2.02-.2.2v5.04c0 .18.02.2.2.2h2.393c1.667 0 3.013-1.347 3.013-3.014 0-1.666-1.346-3.013-3.013-3.013h-2.393v.587z"/></svg>`,
     metaTitle: "SoundCloud Audio Tools — Manage Your Audio Content | Omni Media Tools",
     metaDescription: "Free SoundCloud audio tools to save your own tracks and permitted audio content for offline use.",
@@ -446,6 +573,7 @@ export const platforms: Platform[] = [
     features: ["Your Tracks", "Albums", "High Quality Audio"],
     formats: ["MP3", "FLAC"],
     popular: false,
+    hidden: true,
     iconSvg: `<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5z"/></svg>`,
     metaTitle: "Bandcamp Audio Tools — Manage Your Audio Content | Omni Media Tools",
     metaDescription: "Free Bandcamp audio tools to manage your own artist uploads and permitted audio content in high quality.",
@@ -465,6 +593,10 @@ export function getPlatformBySlug(slug: string): Platform | undefined {
   return platforms.find((p) => p.slug === slug);
 }
 
+export function getVisiblePlatforms(): Platform[] {
+  return platforms.filter((p) => !p.hidden);
+}
+
 export function getPopularPlatforms(): Platform[] {
-  return platforms.filter((p) => p.popular);
+  return platforms.filter((p) => p.popular && !p.hidden);
 }

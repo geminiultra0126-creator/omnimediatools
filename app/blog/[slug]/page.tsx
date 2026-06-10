@@ -2,9 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts, getBlogPostBySlug } from "../../../lib/blog-data";
-import AdBanner from "../../../components/ads/AdBanner";
-import AdInArticle from "../../../components/ads/AdInArticle";
-import { AD_SLOTS, SITE_CONFIG } from "../../../lib/constants";
+import { SITE_CONFIG } from "../../../lib/constants";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,7 +38,6 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
-  // Split content for ad injection
   const paragraphs = post.content.split("\n\n");
   const midPoint = Math.floor(paragraphs.length / 2);
   const firstHalf = paragraphs.slice(0, midPoint).join("\n\n");
@@ -83,17 +80,11 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </h1>
         </header>
 
-        {/* Top Ad */}
-        <AdBanner slot={AD_SLOTS.banner_top} />
-
         {/* Article Content — First Half */}
         <div
           className="prose max-w-none"
           dangerouslySetInnerHTML={{ __html: markdownToHtml(firstHalf) }}
         />
-
-        {/* In-Article Ad */}
-        <AdInArticle />
 
         {/* Article Content — Second Half */}
         <div
@@ -159,8 +150,6 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Bottom Ad */}
-        <AdBanner slot={AD_SLOTS.banner_bottom} className="mt-12" />
 
         {/* Related Articles */}
         {relatedPosts.length > 0 && (

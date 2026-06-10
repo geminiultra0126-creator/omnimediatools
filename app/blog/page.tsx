@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts } from "../../lib/blog-data";
-import AdBanner from "../../components/ads/AdBanner";
-import { AD_SLOTS, SITE_CONFIG } from "../../lib/constants";
+import { SITE_CONFIG } from "../../lib/constants";
 
 export const metadata: Metadata = {
   title: "Blog — Media Guides & Creator Tips",
@@ -25,9 +24,6 @@ export default function BlogPage() {
             management and content creation.
           </p>
         </div>
-
-        {/* Top Ad */}
-        <AdBanner slot={AD_SLOTS.banner_top} />
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -69,9 +65,6 @@ export default function BlogPage() {
             </Link>
           ))}
         </div>
-
-        {/* Bottom Ad */}
-        <AdBanner slot={AD_SLOTS.banner_bottom} className="mt-12" />
       </div>
     </div>
   );

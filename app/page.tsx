@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { platforms } from "../lib/platforms";
+import { getVisiblePlatforms } from "../lib/platforms";
 import DownloadForm from "../components/DownloadForm";
-import AdBanner from "../components/ads/AdBanner";
-import { AD_SLOTS } from "../lib/constants";
+
 
 export default function HomePage() {
   return (
@@ -74,8 +73,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad Banner */}
-      <AdBanner slot={AD_SLOTS.banner_top} />
 
       {/* Stats Section */}
       <section className="border-y border-[hsl(var(--border))] bg-[hsl(var(--surface)/.5)] py-14">
@@ -113,7 +110,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {platforms.map((platform) => (
+            {getVisiblePlatforms().map((platform) => (
               <Link
                 key={platform.slug}
                 href={`/tools/${platform.slug}`}
@@ -300,10 +297,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad Banner */}
-      <div className="container mx-auto px-4 sm:px-6">
-        <AdBanner slot={AD_SLOTS.banner_bottom} />
-      </div>
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 sm:py-28">

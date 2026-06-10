@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { platforms } from "../lib/platforms";
+import { getVisiblePlatforms } from "../lib/platforms";
 import { blogPosts } from "../lib/blog-data";
 import { SITE_CONFIG } from "../lib/constants";
 
@@ -65,8 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Tool pages — 20 platforms
-  const toolPages: MetadataRoute.Sitemap = platforms.map((p) => ({
+  // Tool pages — visible platforms only (hidden audio tools excluded)
+  const toolPages: MetadataRoute.Sitemap = getVisiblePlatforms().map((p) => ({
     url: `${baseUrl}/tools/${p.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
