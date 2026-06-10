@@ -10,7 +10,7 @@ export const SITE_CONFIG = {
 };
 
 // Google AdSense — Replace with your actual Publisher ID after approval
-export const ADSENSE_PUB_ID = "ca-pub-XXXXXXXXXXXXXXXXXX";
+export const ADSENSE_PUB_ID = "ca-pub-2755376120428358";
 
 // Google Analytics 4 — Replace with your Measurement ID
 export const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
