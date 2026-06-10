@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "../../lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "OmniLoad Privacy Policy — Learn how we collect, use, and protect your data. GDPR and CCPA compliant.",
+  description: "Omni Media Tools Privacy Policy — Learn how we collect, use, and protect your data. GDPR and CCPA compliant.",
   alternates: { canonical: `${SITE_CONFIG.url}/privacy` },
 };
 
@@ -21,16 +21,16 @@ export default function PrivacyPage() {
         <div className="prose max-w-none space-y-6">
           <h2>1. Introduction</h2>
           <p>
-            Welcome to OmniLoad (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at {SITE_CONFIG.url} (the &quot;Site&quot;).
+            Welcome to Omni Media Tools (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website at {SITE_CONFIG.url} (the &quot;Site&quot;).
           </p>
           <p>
-            By using OmniLoad, you agree to the collection and use of information in accordance with this policy.
+            By using Omni Media Tools, you agree to the collection and use of information in accordance with this policy.
           </p>
 
           <h2>2. Information We Collect</h2>
           <h3>2.1 Information You Provide</h3>
           <p>
-            When you use OmniLoad, you may provide us with URLs of videos or audio content you wish to download. We do not require registration, and we do not collect personal identification information such as names, email addresses, or phone numbers through our download service.
+            When you use Omni Media Tools, you may provide us with URLs of media content you wish to process. We do not require registration, and we do not collect personal identification information such as names, email addresses, or phone numbers through our media tools.
           </p>
           <h3>2.2 Automatically Collected Information</h3>
           <p>We may automatically collect certain information when you visit our Site, including:</p>
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
 
           <h2>3. Cookies and Tracking Technologies</h2>
           <h3>3.1 Cookies We Use</h3>
-          <p>OmniLoad uses the following types of cookies:</p>
+          <p>Omni Media Tools uses the following types of cookies:</p>
           <ul>
             <li><strong>Essential Cookies:</strong> Required for the website to function properly, including theme preference and cookie consent status.</li>
             <li><strong>Analytics Cookies:</strong> We use Google Analytics to understand how visitors interact with our website. These cookies collect information in an anonymous form.</li>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
           <h2>4. How We Use Your Information</h2>
           <p>We use the information we collect to:</p>
           <ul>
-            <li>Provide and maintain our download service</li>
+            <li>Provide and maintain our media tools</li>
             <li>Improve and optimize our website experience</li>
             <li>Analyze usage patterns and trends</li>
             <li>Display relevant advertisements through Google AdSense</li>
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
 
           <h2>5. Data Storage and Security</h2>
           <p>
-            OmniLoad does not store any downloaded content on our servers. All download processing happens in real-time, and no copies of downloaded files are retained. We use HTTPS encryption to secure all data transmitted between your browser and our servers.
+            Omni Media Tools does not store any processed content on our servers. All processing happens in real-time, and no copies of files are retained. We use HTTPS encryption to secure all data transmitted between your browser and our servers.
           </p>
 
           <h2>6. Third-Party Services</h2>
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
 
           <h2>8. Children&apos;s Privacy</h2>
           <p>
-            OmniLoad is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected information from a child, please contact us immediately.
+            Omni Media Tools is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected information from a child, please contact us immediately.
           </p>
 
           <h2>9. Changes to This Policy</h2>

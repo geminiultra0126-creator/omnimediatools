@@ -174,8 +174,8 @@ export default function DownloadForm({
         </form>
         <p className="mt-3 text-center text-xs text-[hsl(var(--muted))]">
           {platformName
-            ? `Paste any ${platformName} video or audio URL to download`
-            : "Supports YouTube, Instagram, TikTok, Twitter/X, Facebook, Pinterest, Reddit & more"}
+            ? `Paste your ${platformName} content URL to get started`
+            : "Supports 20+ platforms — paste your own content or permitted media URL above"}
         </p>
       </div>
 

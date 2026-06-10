@@ -63,7 +63,7 @@ export default async function ToolPage({ params }: PageProps) {
             />
             <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
               <span style={{ color: platform.color }}>{platform.name}</span>{" "}
-              Downloader
+              Media Tools
             </h1>
             <p className="mx-auto max-w-2xl text-base text-[hsl(var(--muted-foreground))] md:text-lg">
               {platform.description}
@@ -71,6 +71,13 @@ export default async function ToolPage({ params }: PageProps) {
           </div>
 
           <DownloadForm platformName={platform.name} />
+
+          {/* Responsible Use Disclaimer */}
+          <div className="mx-auto mt-5 max-w-2xl rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card)/.5)] px-5 py-3">
+            <p className="text-center text-xs leading-relaxed text-[hsl(var(--muted))]">
+              This tool is for managing your own content, public-domain media, or content you have permission to use. We do not support copyright infringement.
+            </p>
+          </div>
 
           {/* Features */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
@@ -95,8 +102,8 @@ export default async function ToolPage({ params }: PageProps) {
       <section className="py-16">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6">
           <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">
-            How to Download{" "}
-            <span className="gradient-text">{platform.name}</span> Videos
+            How to Use{" "}
+            <span className="gradient-text">{platform.name}</span> Tools
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {platform.howTo.map((step, i) => (
@@ -216,7 +223,7 @@ export default async function ToolPage({ params }: PageProps) {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="mb-8 text-center text-2xl font-bold sm:text-3xl">
-            More <span className="gradient-text">Downloaders</span>
+            More <span className="gradient-text">Media Tools</span>
           </h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
             {relatedPlatforms.map((p) => (

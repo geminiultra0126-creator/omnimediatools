@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline} | 20+ Platforms`,
+    default: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
@@ -28,16 +28,21 @@ export const metadata: Metadata = {
   creator: SITE_CONFIG.author,
   publisher: SITE_CONFIG.author,
   keywords: [
-    "video downloader",
-    "youtube downloader",
-    "instagram downloader",
-    "tiktok downloader",
-    "twitter video download",
-    "facebook video downloader",
-    "mp3 converter",
+    "free online media tools",
+    "free online video downloader",
     "online video downloader",
-    "free video downloader",
-    "social media downloader",
+    "media downloader",
+    "video converter online",
+    "audio extractor online",
+    "video compressor online",
+    "convert video to audio",
+    "media tools for creators",
+    "browser-based media tools",
+    "public domain media downloader",
+    "creator media tools",
+    "online video tools",
+    "compress video online",
+    "extract audio from video online",
   ],
   robots: {
     index: true,
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
     description:
-      "Download high-quality video and audio from 20+ platforms. Free, fast, no registration.",
+      "Free browser-based tools to download, convert, compress, and manage your own media files. No signup required.",
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
     locale: "en_US",
@@ -63,15 +68,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "OmniLoad - Download videos from any platform",
+        alt: "Omni Media Tools — Free Online Media Tools for Creators",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_CONFIG.name} — Free Video & Audio Downloader`,
+    title: `${SITE_CONFIG.name} — ${SITE_CONFIG.tagline}`,
     description:
-      "Download videos from YouTube, Instagram, TikTok & 20+ platforms for free.",
+      "Free browser-based tools to download, convert, and manage your own media files responsibly.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -137,11 +142,11 @@ export default function RootLayout({
                 priceCurrency: "USD",
               },
               featureList: [
-                "Download videos from 20+ platforms",
-                "Support up to 8K quality",
-                "MP3 audio extraction",
+                "Browser-based media tools for 20+ platforms",
+                "Video quality up to 8K",
+                "Audio extraction and conversion",
                 "No registration required",
-                "Unlimited downloads",
+                "Free to use",
               ],
             }),
           }}

@@ -102,7 +102,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         />
 
         {/* FAQ Section */}
-        {post.faqs.length > 0 && (
+        {post.faqs && post.faqs.length > 0 && (
           <section className="mt-12">
             <h2 className="mb-6 text-2xl font-bold">
               Frequently Asked Questions

@@ -1,12 +1,12 @@
 // Site Configuration
 export const SITE_CONFIG = {
-  name: "OmniLoad",
-  tagline: "Free Online Video & Audio Downloader",
+  name: "Omni Media Tools",
+  tagline: "Free Online Media Tools for Creators",
   description:
-    "Download videos and audio from YouTube, Instagram, TikTok, Twitter/X, Facebook, Pinterest, Reddit, Spotify, and 20+ platforms for free. No signup, no limits, up to 8K quality.",
+    "Use Omni Media Tools to download, convert, compress, and manage your own videos, audio, and public-domain media with simple browser-based tools.",
   url: "https://omnimediatools.com",
-  email: "support@omniload.com",
-  author: "OmniLoad",
+  email: "support@omnimediatools.com",
+  author: "Omni Media Tools",
 };
 
 // Google AdSense — Replace with your actual Publisher ID after approval

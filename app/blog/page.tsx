@@ -5,9 +5,9 @@ import AdBanner from "../../components/ads/AdBanner";
 import { AD_SLOTS, SITE_CONFIG } from "../../lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog — Video Download Guides & Tips",
+  title: "Blog — Media Guides & Creator Tips",
   description:
-    "Learn how to download videos from YouTube, Instagram, TikTok, and more. Free guides, tips, and comparisons.",
+    "Learn about responsible media management, content creator tools, and tips for managing your own videos and audio. Free guides and resources.",
   alternates: { canonical: `${SITE_CONFIG.url}/blog` },
 };
 
@@ -18,11 +18,11 @@ export default function BlogPage() {
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            OmniLoad <span className="gradient-text">Blog</span>
+            Omni Media Tools <span className="gradient-text">Blog</span>
           </h1>
           <p className="mx-auto max-w-xl text-base text-[hsl(var(--muted-foreground))]">
-            Guides, tips, and how-to articles for downloading videos and audio
-            from all major platforms.
+            Guides, tips, and educational articles for responsible media
+            management and content creation.
           </p>
         </div>
 

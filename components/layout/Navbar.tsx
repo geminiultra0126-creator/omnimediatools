@@ -43,13 +43,11 @@ export default function Navbar() {
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <path d="M12 15V3" />
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <path d="m7 10 5 5 5-5" />
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
               </svg>
             </div>
             <span className="text-xl font-bold tracking-tight">
-              Omni<span className="gradient-text">Load</span>
+              Omni <span className="gradient-text">Media Tools</span>
             </span>
           </Link>
 
@@ -59,7 +57,7 @@ export default function Navbar() {
               href="/#tools"
               className="text-sm font-medium text-[hsl(var(--muted-foreground))] transition-colors hover:text-[hsl(var(--foreground))]"
             >
-              Platforms
+              Tools
             </Link>
             <Link
               href="/#how-it-works"
@@ -176,7 +174,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-40 bg-[hsl(var(--background)/.95)] backdrop-blur-xl pt-20 px-6 md:hidden">
           <div className="flex flex-col gap-4">
             {[
-              { href: "/#tools", label: "Platforms" },
+              { href: "/#tools", label: "Tools" },
               { href: "/#how-it-works", label: "How It Works" },
               { href: "/blog", label: "Blog" },
               { href: "/#faq", label: "FAQ" },

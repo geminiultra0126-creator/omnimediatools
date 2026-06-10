@@ -12,19 +12,19 @@ export default function Footer() {
           <div>
             <Link href="/" className="mb-4 inline-block">
               <span className="text-xl font-bold tracking-tight">
-                Omni<span className="gradient-text">Load</span>
+                Omni <span className="gradient-text">Media Tools</span>
               </span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-[hsl(var(--muted-foreground))]">
-              Free online video and audio downloader supporting 20+ major
-              platforms. Fast, unlimited, and no registration required.
+              Free online media tools for creators, students, marketers, and
+              everyday users.
             </p>
           </div>
 
-          {/* Downloaders */}
+          {/* Media Tools */}
           <div>
             <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-[hsl(var(--muted-foreground))]">
-              Downloaders
+              Media Tools
             </h3>
             <ul className="space-y-2.5">
               {platforms.slice(0, 8).map((p) => (
@@ -33,7 +33,7 @@ export default function Footer() {
                     href={`/tools/${p.slug}`}
                     className="text-sm text-[hsl(var(--muted))] transition-colors hover:text-[hsl(var(--foreground))]"
                   >
-                    {p.name} Downloader
+                    {p.name} Tools
                   </Link>
                 </li>
               ))}
@@ -51,7 +51,7 @@ export default function Footer() {
                   href="/about"
                   className="text-sm text-[hsl(var(--muted))] transition-colors hover:text-[hsl(var(--foreground))]"
                 >
-                  About
+                  About Us
                 </Link>
               </li>
               <li>
@@ -67,7 +67,15 @@ export default function Footer() {
                   href="/terms"
                   className="text-sm text-[hsl(var(--muted))] transition-colors hover:text-[hsl(var(--foreground))]"
                 >
-                  Terms of Service
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/disclaimer"
+                  className="text-sm text-[hsl(var(--muted))] transition-colors hover:text-[hsl(var(--foreground))]"
+                >
+                  Disclaimer
                 </Link>
               </li>
               <li>
@@ -76,6 +84,14 @@ export default function Footer() {
                   className="text-sm text-[hsl(var(--muted))] transition-colors hover:text-[hsl(var(--foreground))]"
                 >
                   DMCA
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/copyright"
+                  className="text-sm text-[hsl(var(--muted))] transition-colors hover:text-[hsl(var(--foreground))]"
+                >
+                  Copyright Policy
                 </Link>
               </li>
               <li>
@@ -120,10 +136,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[hsl(var(--border))] pt-8 text-xs text-[hsl(var(--muted))] sm:flex-row">
-          <p>© {currentYear} OmniLoad. All rights reserved.</p>
+          <p>&copy; {currentYear} Omni Media Tools. All rights reserved.</p>
           <p className="text-center">
-            OmniLoad does not host any media. We only provide download links
-            from publicly available sources.
+            Omni Media Tools does not host any media files and does not support
+            copyright infringement.
           </p>
         </div>
       </div>

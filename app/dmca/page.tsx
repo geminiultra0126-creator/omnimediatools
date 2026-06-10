@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "../../lib/constants";
 
 export const metadata: Metadata = {
   title: "DMCA Policy",
-  description: "OmniLoad DMCA Policy — How to submit a copyright takedown request or counter-notification.",
+  description: "Omni Media Tools DMCA Policy — How to submit a copyright takedown request or counter-notification.",
   alternates: { canonical: `${SITE_CONFIG.url}/dmca` },
 };
 
@@ -16,13 +16,13 @@ export default function DMCAPage() {
 
         <div className="prose max-w-none space-y-6">
           <h2>1. Overview</h2>
-          <p>OmniLoad respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act (DMCA), we will respond promptly to claims of copyright infringement committed using our service.</p>
+          <p>Omni Media Tools respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act (DMCA), we will respond promptly to claims of copyright infringement committed using our service.</p>
 
           <h2>2. Important Notice</h2>
-          <p>OmniLoad does not host, store, cache, or redistribute any media content. Our service provides tools to download publicly available content from third-party platforms. We act as a technical intermediary only.</p>
+          <p>Omni Media Tools does not host, store, cache, or redistribute any media content. Our service provides browser-based tools to process publicly available content from third-party platforms. We act as a technical intermediary only and do not support or condone copyright infringement.</p>
 
           <h2>3. Filing a DMCA Takedown Notice</h2>
-          <p>If you believe that content accessible through OmniLoad infringes your copyright, please submit a written notification containing the following:</p>
+          <p>If you believe that content accessible through Omni Media Tools infringes your copyright, please submit a written notification containing the following:</p>
           <ul>
             <li>A physical or electronic signature of the copyright owner or authorized agent</li>
             <li>Identification of the copyrighted work claimed to have been infringed</li>
@@ -48,7 +48,7 @@ export default function DMCAPage() {
           </ul>
 
           <h2>6. Repeat Infringers</h2>
-          <p>OmniLoad will terminate access for users who are determined to be repeat infringers in appropriate circumstances.</p>
+          <p>Omni Media Tools will terminate access for users who are determined to be repeat infringers in appropriate circumstances.</p>
 
           <h2>7. Contact</h2>
           <p>For DMCA-related inquiries, contact us at <a href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</a>.</p>

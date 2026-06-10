@@ -14,7 +14,7 @@ export default function ContactPage() {
     e.preventDefault();
     // Open email client with pre-filled data
     const mailtoLink = `mailto:${SITE_CONFIG.email}?subject=${encodeURIComponent(
-      subject || "Contact from OmniLoad"
+      subject || "Contact from Omni Media Tools"
     )}&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\n${message}`
     )}`;
