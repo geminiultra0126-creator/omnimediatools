@@ -279,6 +279,12 @@ export const platforms: Platform[] = [
       { question: "Can I save Pinterest video pins?", answer: "Yes, Omni Media Tools supports saving both video pins and image pins from Pinterest." },
       { question: "What resolution are saved images?", answer: "Omni Media Tools saves Pinterest images in the highest available resolution, typically the original upload quality." },
     ],
+    longContent: `<h2>What Is the Pinterest Media Tool?</h2>
+<p>The Pinterest Media Tool helps creators and marketers save their own pins, video pins, and images for portfolio building, backup, or cross-platform sharing. Pinterest is a visual discovery platform, and creators who invest time creating pin-worthy content need reliable ways to manage their media library.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Graphic Designers:</strong> Back up your own design pins and infographics for portfolio use.</li><li><strong>Bloggers:</strong> Save your own pin graphics for reuse across platforms and blog posts.</li><li><strong>Marketers:</strong> Archive your own brand's Pinterest campaigns for analytics and reporting.</li><li><strong>Personal Users:</strong> Keep copies of your own uploaded recipe pins, DIY project pins, and inspiration boards.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "reddit-downloader",
@@ -301,6 +307,12 @@ export const platforms: Platform[] = [
       { question: "Why do Reddit videos often have no audio?", answer: "Reddit stores video and audio in separate files. Omni Media Tools automatically merges them so you get the complete video with sound." },
       { question: "Can I save Reddit GIFs?", answer: "Yes! Omni Media Tools can save GIFs from Reddit posts in their original quality." },
     ],
+    longContent: `<h2>What Is the Reddit Media Tool?</h2>
+<p>The Reddit Media Tool solves a common frustration: Reddit stores video and audio in separate files, making it difficult to save your own video posts with sound. Our tool automatically merges them, giving you a complete video file with audio intact.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Reddit Content Creators:</strong> Save your own video posts for backup or repurposing on other platforms.</li><li><strong>Community Moderators:</strong> Archive your own community's video content for documentation.</li><li><strong>Researchers:</strong> Save public domain or permitted research-related video content.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "snapchat-downloader",
@@ -323,6 +335,12 @@ export const platforms: Platform[] = [
       { question: "Can I save Snapchat Stories?", answer: "Yes, Omni Media Tools can save publicly shared Snapchat Stories. Private stories cannot be accessed." },
       { question: "Can I save Snapchat Spotlight videos?", answer: "Yes! Simply copy the Spotlight video link and paste it into Omni Media Tools." },
     ],
+    longContent: `<h2>What Is the Snapchat Media Tool?</h2>
+<p>The Snapchat Media Tool lets you save your own Spotlight videos and public Stories for backup before they expire. Snapchat content is ephemeral by design, making backup essential for creators who want to preserve their creative work.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Spotlight Creators:</strong> Save your own viral Spotlight videos for repurposing on TikTok or Instagram.</li><li><strong>Brand Accounts:</strong> Archive your own brand's Snapchat campaigns for internal records.</li><li><strong>Personal Users:</strong> Keep copies of your own Snapchat memories and Stories.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "linkedin-downloader",
@@ -345,6 +363,12 @@ export const platforms: Platform[] = [
       { question: "Can I save my LinkedIn videos?", answer: "Yes, Omni Media Tools supports saving videos from public LinkedIn posts and articles." },
       { question: "Do I need a LinkedIn account?", answer: "The video must be publicly accessible. Some LinkedIn content requires being logged in to view." },
     ],
+    longContent: `<h2>What Is the LinkedIn Media Tool?</h2>
+<p>The LinkedIn Media Tool helps professionals save their own video posts for portfolio management, presentation reuse, or backup. LinkedIn does not offer a native video download option, which can be frustrating when you need your own content in a portable format for client presentations or professional portfolios.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Professionals:</strong> Save your own video posts for use in professional portfolios and resumes.</li><li><strong>Corporate Trainers:</strong> Back up your own training videos for offline use in workshops.</li><li><strong>Thought Leaders:</strong> Archive your own LinkedIn video content for repurposing into courses or webinars.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "threads-downloader",
@@ -367,6 +391,12 @@ export const platforms: Platform[] = [
       { question: "Can I save Threads videos?", answer: "Yes, Omni Media Tools supports saving videos posted on Meta's Threads platform." },
       { question: "Can I save Threads photos?", answer: "Yes, you can save both videos and photos from public Threads posts." },
     ],
+    longContent: `<h2>What Is the Threads Media Tool?</h2>
+<p>The Threads Media Tool helps you save your own videos and media posts from Meta's Threads platform. As a newer social platform, Threads does not yet offer robust content management features, making external tools essential for creators who want to back up or repurpose their content.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Content Creators:</strong> Save your own Threads videos for cross-posting to Instagram, TikTok, or YouTube.</li><li><strong>Brand Managers:</strong> Archive your own brand's Threads content for campaign tracking.</li><li><strong>Early Adopters:</strong> Keep copies of your own content as the platform evolves.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "vimeo-downloader",
@@ -389,6 +419,12 @@ export const platforms: Platform[] = [
       { question: "Can I save Vimeo videos in 4K?", answer: "Yes, if the original video was uploaded in 4K, Omni Media Tools will offer 4K as an option." },
       { question: "Can I save private Vimeo videos?", answer: "No, Omni Media Tools can only process publicly available Vimeo videos." },
     ],
+    longContent: `<h2>What Is the Vimeo Media Tool?</h2>
+<p>The Vimeo Media Tool is designed for filmmakers, videographers, and creators who host their work on Vimeo. Vimeo is known for its high-quality, ad-free video hosting, and our tool helps you save your own uploaded content in the highest available quality for backup or offline editing.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Filmmakers:</strong> Back up your own short films, showreels, and demo reels from Vimeo.</li><li><strong>Videographers:</strong> Save your own client project previews for portfolio management.</li><li><strong>Educators:</strong> Archive your own educational content hosted on Vimeo for offline classroom use.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "dailymotion-downloader",
@@ -410,6 +446,12 @@ export const platforms: Platform[] = [
     faqs: [
       { question: "What quality options are available?", answer: "Omni Media Tools supports saving Dailymotion videos in all available qualities, from 240p to 1080p HD." },
     ],
+    longContent: `<h2>What Is the Dailymotion Media Tool?</h2>
+<p>The Dailymotion Media Tool helps creators save their own Dailymotion videos for offline viewing and content management. Dailymotion is a popular alternative to YouTube, and many creators host content there alongside other platforms.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Multi-Platform Creators:</strong> Save your own Dailymotion uploads for cross-platform distribution.</li><li><strong>News Organizations:</strong> Archive your own published video reports for internal records.</li><li><strong>Educators:</strong> Save your own educational content for offline classroom use.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "spotify-downloader",
@@ -476,9 +518,15 @@ export const platforms: Platform[] = [
       { step: "Save the clip", description: "Click the button to save the Twitch clip or VOD to your device." },
     ],
     faqs: [
-      { question: "Can I save my Twitch clips?", answer: "Yes, Omni Media Tools supports saving Twitch clips in their original quality." },
+      { question: "Can I save Twitch clips?", answer: "Yes, Omni Media Tools supports saving clips, VODs, and highlights from Twitch." },
       { question: "Can I save full Twitch VODs?", answer: "Yes, you can save full Twitch VODs (Video on Demand) for offline viewing." },
     ],
+    longContent: `<h2>What Is the Twitch Media Tool?</h2>
+<p>The Twitch Media Tool helps streamers save their own clips, VODs (Video on Demand), and highlights for backup or content repurposing. Twitch VODs expire after a set period, making backup critical for preserving your streaming content.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Streamers:</strong> Save your own stream highlights for YouTube compilations or social media clips.</li><li><strong>Esports Players:</strong> Archive your own gameplay clips for montages or portfolio building.</li><li><strong>Content Editors:</strong> Save your own Twitch clips for editing into longer YouTube videos.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "bilibili-downloader",
@@ -500,6 +548,12 @@ export const platforms: Platform[] = [
     faqs: [
       { question: "Can I save Bilibili videos?", answer: "Yes, Omni Media Tools supports saving videos from Bilibili in various qualities." },
     ],
+    longContent: `<h2>What Is the Bilibili Media Tool?</h2>
+<p>The Bilibili Media Tool helps creators save their own Bilibili videos for backup, repurposing, or offline viewing. Bilibili is one of the largest video platforms in Asia, and our tool makes it easy to manage your content across platforms.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Content Creators:</strong> Save your own Bilibili uploads for cross-platform publishing.</li><li><strong>Anime Fans:</strong> Save your own fan-created, original content for backup.</li><li><strong>Educators:</strong> Archive your own educational content for offline access.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "tumblr-downloader",
@@ -519,8 +573,14 @@ export const platforms: Platform[] = [
       { step: "Save the content", description: "Click the button to save the video, GIF, or image." },
     ],
     faqs: [
-      { question: "Can I save Tumblr GIFs?", answer: "Yes, Omni Media Tools supports saving GIFs from Tumblr in their original quality." },
+      { question: "Can I save Tumblr GIFs?", answer: "Yes, Omni Media Tools supports saving both videos and GIFs from Tumblr." },
     ],
+    longContent: `<h2>What Is the Tumblr Media Tool?</h2>
+<p>The Tumblr Media Tool helps you save your own Tumblr videos, GIFs, and media posts for backup or repurposing. Tumblr's unique multimedia blogging format makes it a popular platform for creative expression, and our tool helps you manage your content library.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Artists & Illustrators:</strong> Back up your own artwork posts and video content from Tumblr.</li><li><strong>Writers:</strong> Save your own multimedia blog posts for archival.</li><li><strong>Fandom Creators:</strong> Keep copies of your own original fan art and creative works.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "vk-downloader",
@@ -542,6 +602,12 @@ export const platforms: Platform[] = [
     faqs: [
       { question: "Can I save VK videos?", answer: "Yes, Omni Media Tools supports saving videos from VKontakte in various qualities." },
     ],
+    longContent: `<h2>What Is the VK Media Tool?</h2>
+<p>The VK (VKontakte) Media Tool helps you save your own VK video posts for backup or cross-platform sharing. VK is one of the largest social networks in Eastern Europe and Russia, and our tool makes managing your VK video content simple.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>VK Creators:</strong> Save your own video posts for repurposing on YouTube or Instagram.</li><li><strong>Community Managers:</strong> Archive your own community's video content for records.</li><li><strong>Personal Users:</strong> Keep backup copies of your own family videos and memories from VK.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "likee-downloader",
@@ -563,6 +629,12 @@ export const platforms: Platform[] = [
     faqs: [
       { question: "Can I save my own Likee videos?", answer: "Yes, Omni Media Tools lets you save your own Likee content in original quality for backup." },
     ],
+    longContent: `<h2>What Is the Likee Media Tool?</h2>
+<p>The Likee Media Tool helps you save your own Likee short videos for backup or content repurposing. Likee is a popular short-video platform, and our tool helps creators manage their content across multiple platforms efficiently.</p>
+<h2>Who Can Use This Tool?</h2>
+<ul><li><strong>Likee Creators:</strong> Save your own viral videos for cross-posting to TikTok, Instagram Reels, or YouTube Shorts.</li><li><strong>Content Managers:</strong> Archive your own brand's Likee campaigns for reporting.</li><li><strong>Personal Users:</strong> Keep backup copies of your own creative Likee videos.</li></ul>
+<h2>Responsible Use Disclaimer</h2>
+<p>Only use this tool for content you own, public-domain media, or content you have permission to use. Omni Media Tools does not support copyright infringement or unauthorized downloading.</p>`,
   },
   {
     slug: "bandcamp-downloader",
