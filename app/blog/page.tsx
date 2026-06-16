@@ -1,7 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { blogPosts } from "../../lib/blog-data";
+import { getAllBlogPosts } from "../../lib/blog-data";
 import { SITE_CONFIG } from "../../lib/constants";
+
+// Revalidate every 60 seconds to pick up new posts
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Blog — Media Guides & Creator Tips",
@@ -10,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_CONFIG.url}/blog` },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogPosts = await getAllBlogPosts();
   return (
     <div className="py-16 sm:py-24">
       <div className="container mx-auto max-w-5xl px-4 sm:px-6">

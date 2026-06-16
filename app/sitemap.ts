@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
 import { getVisiblePlatforms } from "../lib/platforms";
-import { blogPosts } from "../lib/blog-data";
+import { getAllBlogPosts } from "../lib/blog-data";
 import { SITE_CONFIG } from "../lib/constants";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.url;
   const now = new Date().toISOString();
 
@@ -73,8 +73,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Blog articles
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  // Blog articles (dynamic + hardcoded)
+  const allBlogPosts = await getAllBlogPosts();
+  const blogPages: MetadataRoute.Sitemap = allBlogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.date,
     changeFrequency: "monthly" as const,

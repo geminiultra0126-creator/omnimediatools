@@ -1,20 +1,22 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import Link from "next/link";
-import { blogPosts, getBlogPostBySlug } from "../../../lib/blog-data";
+import { getAllBlogPosts, getBlogPostBySlugAsync } from "../../../lib/blog-data";
 import { SITE_CONFIG } from "../../../lib/constants";
+
+// Revalidate every 60 seconds
+export const revalidate = 60;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  return blogPosts.map((p) => ({ slug: p.slug }));
-}
+// Dynamic rendering for DB posts
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlugAsync(slug);
   if (!post) return {};
 
   return {
@@ -33,10 +35,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlugAsync(slug);
   if (!post) notFound();
 
-  const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  const allPosts = await getAllBlogPosts();
+  const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   const paragraphs = post.content.split("\n\n");
   const midPoint = Math.floor(paragraphs.length / 2);

@@ -1016,3 +1016,73 @@ export const blogPosts: BlogPost[] = [
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
+
+// =====================================================
+// Supabase Dynamic Blog Posts
+// =====================================================
+import { supabase, DBBlogPost } from "./supabase";
+
+function dbToLocal(db: DBBlogPost): BlogPost {
+  return {
+    slug: db.slug,
+    title: db.title,
+    excerpt: db.excerpt,
+    content: db.content,
+    category: db.category,
+    readTime: db.read_time,
+    date: db.date,
+    metaTitle: db.meta_title,
+    metaDescription: db.meta_description,
+    faqs: db.faqs || undefined,
+  };
+}
+
+/**
+ * Fetch all blog posts from both Supabase and hardcoded data.
+ * Dynamic posts from DB come first, sorted by date (newest first).
+ */
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
+  try {
+    const { data, error } = await supabase
+      .from("blog_posts")
+      .select("*")
+      .eq("status", "published")
+      .order("date", { ascending: false });
+
+    if (error || !data) {
+      return blogPosts;
+    }
+
+    const dbPosts = data.map(dbToLocal);
+    const dbSlugs = new Set(dbPosts.map((p) => p.slug));
+    const hardcoded = blogPosts.filter((p) => !dbSlugs.has(p.slug));
+    const all = [...dbPosts, ...hardcoded];
+    all.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return all;
+  } catch {
+    return blogPosts;
+  }
+}
+
+/**
+ * Get a single blog post by slug — checks Supabase first, then hardcoded.
+ */
+export async function getBlogPostBySlugAsync(slug: string): Promise<BlogPost | undefined> {
+  try {
+    const { data, error } = await supabase
+      .from("blog_posts")
+      .select("*")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .single();
+
+    if (!error && data) {
+      return dbToLocal(data);
+    }
+  } catch {
+    // Fallback to hardcoded
+  }
+
+  return blogPosts.find((p) => p.slug === slug);
+}
+
