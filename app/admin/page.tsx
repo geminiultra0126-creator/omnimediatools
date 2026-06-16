@@ -12,6 +12,7 @@ interface BlogPost {
   status: string;
   date: string;
   read_time: string;
+  source?: "database" | "static";
 }
 
 export default function AdminDashboard() {
@@ -66,6 +67,9 @@ export default function AdminDashboard() {
     }
   };
 
+  const dbPosts = posts.filter((p) => p.source === "database");
+  const staticPosts = posts.filter((p) => p.source === "static");
+
   return (
     <AdminLayout>
       <div className="space-y-6">
@@ -75,6 +79,12 @@ export default function AdminDashboard() {
             <h1 className="text-2xl font-bold">Blog Posts</h1>
             <p className="text-sm text-gray-500 mt-1">
               {posts.length} post{posts.length !== 1 ? "s" : ""} total
+              {dbPosts.length > 0 && (
+                <span> · {dbPosts.length} dynamic</span>
+              )}
+              {staticPosts.length > 0 && (
+                <span> · {staticPosts.length} static</span>
+              )}
             </p>
           </div>
           <Link
@@ -121,88 +131,117 @@ export default function AdminDashboard() {
                   <th className="text-left px-4 py-3 font-medium">Title</th>
                   <th className="text-left px-4 py-3 font-medium hidden sm:table-cell">Category</th>
                   <th className="text-left px-4 py-3 font-medium hidden md:table-cell">Date</th>
+                  <th className="text-left px-4 py-3 font-medium">Source</th>
                   <th className="text-left px-4 py-3 font-medium">Status</th>
                   <th className="text-right px-4 py-3 font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#1e1e2e]">
-                {posts.map((post) => (
-                  <tr key={post.id} className="hover:bg-[#12121a] transition-colors">
-                    <td className="px-4 py-3">
-                      <div>
-                        <p className="font-medium text-white truncate max-w-[300px]">
-                          {post.title}
-                        </p>
-                        <p className="text-[10px] text-gray-600 mt-0.5">
-                          /{post.slug}
-                        </p>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 hidden sm:table-cell">
-                      <span className="px-2 py-0.5 text-[10px] font-medium bg-violet-600/10 text-violet-400 rounded-full">
-                        {post.category}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 text-gray-400 hidden md:table-cell">
-                      {new Date(post.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
-                    </td>
-                    <td className="px-4 py-3">
-                      <span
-                        className={`px-2 py-0.5 text-[10px] font-medium rounded-full ${
-                          post.status === "published"
-                            ? "bg-emerald-500/10 text-emerald-400"
-                            : "bg-yellow-500/10 text-yellow-400"
-                        }`}
-                      >
-                        {post.status === "published" ? "✅ Live" : "📝 Draft"}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3">
-                      <div className="flex items-center justify-end gap-2">
-                        <Link
-                          href={`/blog/${post.slug}`}
-                          target="_blank"
-                          className="px-2 py-1 text-[10px] text-gray-400 hover:text-white rounded transition-colors"
+                {posts.map((post) => {
+                  const isStatic = post.source === "static";
+                  return (
+                    <tr
+                      key={post.id}
+                      className={`hover:bg-[#12121a] transition-colors ${
+                        isStatic ? "opacity-70" : ""
+                      }`}
+                    >
+                      <td className="px-4 py-3">
+                        <div>
+                          <p className="font-medium text-white truncate max-w-[300px]">
+                            {post.title}
+                          </p>
+                          <p className="text-[10px] text-gray-600 mt-0.5">
+                            /{post.slug}
+                          </p>
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 hidden sm:table-cell">
+                        <span className="px-2 py-0.5 text-[10px] font-medium bg-violet-600/10 text-violet-400 rounded-full">
+                          {post.category}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-gray-400 hidden md:table-cell">
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`px-2 py-0.5 text-[10px] font-medium rounded-full ${
+                            isStatic
+                              ? "bg-blue-500/10 text-blue-400"
+                              : "bg-emerald-500/10 text-emerald-400"
+                          }`}
                         >
-                          View
-                        </Link>
-                        <Link
-                          href={`/admin/edit/${post.id}`}
-                          className="px-2 py-1 text-[10px] text-violet-400 hover:text-violet-300 rounded transition-colors"
+                          {isStatic ? "📌 Hardcoded" : "🗄️ Database"}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span
+                          className={`px-2 py-0.5 text-[10px] font-medium rounded-full ${
+                            post.status === "published"
+                              ? "bg-emerald-500/10 text-emerald-400"
+                              : "bg-yellow-500/10 text-yellow-400"
+                          }`}
                         >
-                          Edit
-                        </Link>
-                        {deleteId === post.id ? (
-                          <div className="flex items-center gap-1">
-                            <button
-                              onClick={() => handleDelete(post.id)}
-                              className="px-2 py-1 text-[10px] text-red-400 bg-red-500/10 rounded font-medium"
-                            >
-                              Confirm
-                            </button>
-                            <button
-                              onClick={() => setDeleteId(null)}
-                              className="px-2 py-1 text-[10px] text-gray-400 rounded"
-                            >
-                              Cancel
-                            </button>
-                          </div>
-                        ) : (
-                          <button
-                            onClick={() => setDeleteId(post.id)}
-                            className="px-2 py-1 text-[10px] text-red-400 hover:text-red-300 rounded transition-colors"
+                          {post.status === "published" ? "✅ Live" : "📝 Draft"}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex items-center justify-end gap-2">
+                          <Link
+                            href={`/blog/${post.slug}`}
+                            target="_blank"
+                            className="px-2 py-1 text-[10px] text-gray-400 hover:text-white rounded transition-colors"
                           >
-                            Delete
-                          </button>
-                        )}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                            View
+                          </Link>
+                          {!isStatic && (
+                            <>
+                              <Link
+                                href={`/admin/edit/${post.id}`}
+                                className="px-2 py-1 text-[10px] text-violet-400 hover:text-violet-300 rounded transition-colors"
+                              >
+                                Edit
+                              </Link>
+                              {deleteId === post.id ? (
+                                <div className="flex items-center gap-1">
+                                  <button
+                                    onClick={() => handleDelete(post.id)}
+                                    className="px-2 py-1 text-[10px] text-red-400 bg-red-500/10 rounded font-medium"
+                                  >
+                                    Confirm
+                                  </button>
+                                  <button
+                                    onClick={() => setDeleteId(null)}
+                                    className="px-2 py-1 text-[10px] text-gray-400 rounded"
+                                  >
+                                    Cancel
+                                  </button>
+                                </div>
+                              ) : (
+                                <button
+                                  onClick={() => setDeleteId(post.id)}
+                                  className="px-2 py-1 text-[10px] text-red-400 hover:text-red-300 rounded transition-colors"
+                                >
+                                  Delete
+                                </button>
+                              )}
+                            </>
+                          )}
+                          {isStatic && (
+                            <span className="px-2 py-1 text-[10px] text-gray-600">
+                              Read-only
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

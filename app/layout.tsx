@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import { ThemeProvider } from "../components/ThemeProvider";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
@@ -84,19 +85,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isAdSenseActive = ADSENSE_PUB_ID !== "ca-pub-XXXXXXXXXXXXXXXXXX";
+  // Detect admin routes to hide Navbar/Footer
+  const headersList = await headers();
+  const pathname = headersList.get("x-next-url") || headersList.get("x-invoke-path") || "";
+  const isAdmin = pathname.startsWith("/admin");
+
+  const isAdsenseActive = ADSENSE_PUB_ID !== "ca-pub-XXXXXXXXXXXXXXXXXX";
   const isGAActive = GA_MEASUREMENT_ID !== "G-XXXXXXXXXX";
 
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google AdSense */}
-        {isAdSenseActive && (
+        {/* AdSense */}
+        {isAdsenseActive && (
           <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB_ID}`}
@@ -156,10 +162,10 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <CookieConsent />
+          {!isAdmin && <Navbar />}
+          <main className={isAdmin ? "" : "flex-grow"}>{children}</main>
+          {!isAdmin && <Footer />}
+          {!isAdmin && <CookieConsent />}
         </ThemeProvider>
       </body>
     </html>

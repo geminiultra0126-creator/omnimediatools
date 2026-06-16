@@ -17,22 +17,49 @@ function verifyToken(request: Request): boolean {
   }
 }
 
-// GET /api/admin/posts — List all posts
+// GET /api/admin/posts — List all posts (DB + hardcoded)
 export async function GET(request: Request) {
   if (!verifyToken(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { data, error } = await supabase
+  // Fetch DB posts
+  const { data: dbPosts } = await supabase
     .from("blog_posts")
     .select("*")
     .order("date", { ascending: false });
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+  // Get hardcoded posts
+  const { blogPosts } = await import("../../../../lib/blog-data");
+  const staticPosts = blogPosts.map((p) => ({
+    id: `static-${p.slug}`,
+    slug: p.slug,
+    title: p.title,
+    excerpt: p.excerpt,
+    content: p.content,
+    category: p.category,
+    read_time: p.readTime,
+    date: p.date,
+    meta_title: p.metaTitle,
+    meta_description: p.metaDescription,
+    faqs: p.faqs || null,
+    status: "published",
+    source: "static",
+  }));
 
-  return NextResponse.json(data);
+  // Merge: DB posts first (editable), then static posts (read-only)
+  const dbSlugs = new Set((dbPosts || []).map((p: { slug: string }) => p.slug));
+  const filteredStatic = staticPosts.filter((p) => !dbSlugs.has(p.slug));
+
+  const allPosts = [
+    ...(dbPosts || []).map((p: Record<string, unknown>) => ({ ...p, source: "database" })),
+    ...filteredStatic,
+  ];
+
+  // Sort by date
+  allPosts.sort((a, b) => new Date(b.date as string).getTime() - new Date(a.date as string).getTime());
+
+  return NextResponse.json(allPosts);
 }
 
 // POST /api/admin/posts — Create a new post
